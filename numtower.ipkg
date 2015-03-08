@@ -1,0 +1,7 @@
+package numtower
+
+modules = NumTower
+	, NumTower.Common
+	, NumTower.Nat
+	, NumTower.ZZ
+	, NumTower.Rat
