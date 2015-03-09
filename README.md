@@ -6,9 +6,9 @@ Idris. No more `fromIntegral x / fromIntegral y`!
 Lifting operands to a type which is closed under a requested
 operation, if paths (injective functions) to such a type exist.
 
-Currently implemented: Fin n → ℕ → ℤ → ℚ (the latter is implemented
-quickly and poorly here, no coprimes in it); the implemented
-operations are +, -, /, *.
+Currently implemented: Fin n → ℕ → ℤ (ZZ ↔ Integer) → ℚ (the latter is
+implemented quickly and poorly here, no coprimes in it); the
+implemented operations are +, -, /, *.
 
 It's also pretty slow to typecheck relatively big expressions now:
 `foo` from the example below takes ~30 seconds to typecheck; details
@@ -31,7 +31,7 @@ Pos 5 # 2 : Rat
 8 : Nat
 
 λΠ> (the (Fin 5) 3) - (the Nat 5)
-NegS 1 : ZZ
+-2 : Integer
 
 λΠ> (the (Fin 5) 3) * (the Nat 5)
 15 : Nat
@@ -40,7 +40,13 @@ NegS 1 : ZZ
 Pos 3 # 5 : Rat
 
 λΠ> (the (Fin 5) 3) + (the Nat 5) * (the ZZ 2)
+13 : Integer
+
+λΠ> the ZZ $ (the (Fin 5) 3) + (the Nat 5) * (the ZZ 2)
 Pos 13 : ZZ
+
+λΠ> 1 + 3 * 5 / 2 - 2
+Pos 13 # 2 : Rat
 ```
 
 

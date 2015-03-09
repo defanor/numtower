@@ -1,4 +1,5 @@
 import public NumTower.ZZ
+import public NumTower.Integer
 
 %default total
 
@@ -75,3 +76,6 @@ instance Embedding Nat Rat where
 
 instance Embedding ZZ Rat where
   to x = x # 1
+
+instance Embedding Integer Rat where
+  to x = (to x) # 1

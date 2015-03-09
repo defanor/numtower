@@ -27,3 +27,6 @@ instance Embedding Nat ZZ where
 
 instance Embedding (Fin n) ZZ where
   to = to . to {b=Nat}
+
+instance Embedding Integer ZZ where
+  to = cast
