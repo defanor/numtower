@@ -2,6 +2,8 @@ package numtower
 
 modules = NumTower
 	, NumTower.Common
+	, NumTower.Fin
 	, NumTower.Nat
 	, NumTower.ZZ
+	, NumTower.Integer
 	, NumTower.Rat

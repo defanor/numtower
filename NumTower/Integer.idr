@@ -11,17 +11,19 @@ import public Data.ZZ
 instance (Embedding a Integer, Embedding b Integer, ClosedPlus Integer) => PlusEmbedding a b Integer where { }
 instance (Embedding a Integer, Embedding b Integer, ClosedSub Integer) => SubEmbedding a b Integer where { }
 instance (Embedding a Integer, Embedding b Integer, ClosedMult Integer) => MultEmbedding a b Integer where { }
+instance (Embedding a Integer, Embedding b Integer) => OrdEmbedding a b Integer where { }
+-- instance (Embedding a Integer, Embedding b Integer) => EqEmbedding a b Integer where { }
 
 -- Operations
 
 instance ClosedPlus Integer where
   closedPlus = prim__addBigInt
 
-instance ClosedSub Integer where
-  closedSub = prim__subBigInt
-
 instance ClosedMult Integer where
   closedMult = prim__mulBigInt
+
+instance ClosedSub Integer where
+  closedSub = prim__subBigInt
 
 -- Embeddings
 

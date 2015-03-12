@@ -1,3 +1,4 @@
+import public NumTower.Fin
 import public NumTower.Common
 import public Data.Fin
 
@@ -7,6 +8,8 @@ import public Data.Fin
 
 instance (Embedding a Nat, Embedding b Nat, ClosedPlus Nat) => PlusEmbedding a b Nat where { }
 instance (Embedding a Nat, Embedding b Nat, ClosedMult Nat) => MultEmbedding a b Nat where { }
+instance (Embedding a Nat, Embedding b Nat) => OrdEmbedding a b Nat where { }
+-- instance (Embedding a Nat, Embedding b Nat) => EqEmbedding a b Nat where { }
 
 -- Operations
 

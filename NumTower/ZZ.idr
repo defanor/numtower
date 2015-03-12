@@ -8,6 +8,8 @@ import public Data.ZZ
 instance (Embedding a ZZ, Embedding b ZZ, ClosedPlus ZZ) => PlusEmbedding a b ZZ where { }
 instance (Embedding a ZZ, Embedding b ZZ, ClosedMult ZZ) => MultEmbedding a b ZZ where { }
 instance (Embedding a ZZ, Embedding b ZZ, ClosedSub ZZ) => SubEmbedding a b ZZ where { }
+instance (Embedding a ZZ, Embedding b ZZ) => OrdEmbedding a b ZZ where { }
+-- instance (Embedding a ZZ, Embedding b ZZ) => EqEmbedding a b ZZ where { }
 
 -- Operations
 

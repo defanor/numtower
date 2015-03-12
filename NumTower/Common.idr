@@ -62,3 +62,28 @@ class (Embedding a c, Embedding b c, ClosedDiv c) => DivEmbedding a b c where { 
 (/) : (DivEmbedding a b c) =>
     a -> (y:b) -> {default Refl p: isZ (to y) = False} -> c
 (/) x y {p} = closedDiv (to x) (to y) p
+
+
+-- Ord
+
+class (Embedding a c, Embedding b c, Ord c) => OrdEmbedding a b c where { }
+
+(<) : (OrdEmbedding a b c) => a -> b -> Bool
+(<) x y = Prelude.Classes.(<) (to x) (to y)
+
+(<=) : (OrdEmbedding a b c) => a -> b -> Bool
+(<=) x y = Prelude.Classes.(<=) (to x) (to y)
+
+(>) : (OrdEmbedding a b c) => a -> b -> Bool
+(>) x y = Prelude.Classes.(>) (to x) (to y)
+
+(>=) : (OrdEmbedding a b c) => a -> b -> Bool
+(>=) x y = Prelude.Classes.(>=) (to x) (to y)
+
+
+-- Eq
+
+class (Embedding a c, Embedding b c, Eq c) => EqEmbedding a b c where { }
+
+(==) : (EqEmbedding a b c) => a -> b -> Bool
+(==) x y = Prelude.Classes.(==) (to x) (to y)

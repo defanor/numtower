@@ -56,11 +56,11 @@ instance (Embedding a Rat, Embedding b Rat, ClosedDiv Rat) => DivEmbedding a b R
 instance ClosedPlus Rat where
   closedPlus = rPlus
 
-instance ClosedSub Rat where
-  closedSub = rSub
-
 instance ClosedMult Rat where
   closedMult = rMult
+
+instance ClosedSub Rat where
+  closedSub = rSub
 
 instance ClosedDiv Rat where
   isZ = isRZero
